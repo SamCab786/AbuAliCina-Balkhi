@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Vazirmatn:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-deep-slate: #1e293b;
+  --color-forest-green: #2d6a4f;
+  --color-sky-teal: #0f766e;
+  --color-warm-amber: #f59e0b;
+  --color-cream-white: #f9f7f0;
+  --color-light-gray: #e5e7eb;
+
+  --font-sans: "Inter", "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-cream-white)] text-[var(--color-deep-slate)] font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm;
+  }
+  .glass-dark {
+    @apply bg-[var(--color-deep-slate)]/90 backdrop-blur-md border border-white/10 shadow-lg text-white;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-[var(--color-light-gray)] overflow-hidden transition-all duration-200 hover:shadow-md;
+  }
+  .btn-primary {
+    @apply bg-gradient-to-r from-[var(--color-forest-green)] to-[var(--color-sky-teal)] text-white font-medium py-2 px-4 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 active:scale-95;
+  }
+  .btn-secondary {
+    @apply bg-white text-[var(--color-deep-slate)] border border-[var(--color-light-gray)] font-medium py-2 px-4 rounded-xl shadow-sm hover:bg-gray-50 transition-all duration-200 active:scale-95;
+  }
+  .badge {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-success {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+  .badge-warning {
+    @apply bg-[var(--color-warm-amber)]/20 text-amber-800;
+  }
+  .badge-info {
+    @apply bg-blue-100 text-blue-800;
+  }
+  .badge-neutral {
+    @apply bg-gray-100 text-gray-800;
+  }
+}
